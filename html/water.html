@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Reminder with Customizable Interval</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="f2.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        
+          
+        </div>
+  <div class="container">
+    <img src="image/waterglass2.jpg" alt="Water Reminder Image" class="reminder-image">
+</div>
+    <p>Current time: <span id="currentTime"></span></p>
+    <input type="time" id="reminderTime">
+    <select id="reminderInterval">
+      
+        <option value="1">Every 1 hour</option>
+        <option value="2">Every 2 hours</option>
+        <option value="3">Every 3 hours</option>
+        <option value="4">Every 4 hours</option>
+        <!-- Add more options for different intervals as needed -->
+    </select>
+    
+    <button onclick="startReminder();">Start Reminder</button>
+    <button onclick="stopReminder();">Stop Reminder</button>
+
+    <script type="text/javascript">
+        var reminderIntervalID; // Variable to store the interval ID for the reminder
+        var audio = new Audio("alarm.mp3"); // Path to the audio file
+
+        function currentTime() {
+            var date = new Date();
+            var now = date.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('currentTime').innerHTML = now;
+        }
+
+        function startReminder() {
+            var reminderTime = document.getElementById('reminderTime').value;
+            var interval = parseInt(document.getElementById('reminderInterval').value) * 60 * 60 * 1000; // Convert hours to milliseconds
+
+            // Schedule the first reminder
+            scheduleReminder(reminderTime);
+
+            // Set interval to check and schedule subsequent reminders
+            reminderIntervalID = setInterval(function() {
+                scheduleReminder(reminderTime);
+            }, interval);
+        }
+
+        function scheduleReminder(reminderTime) {
+            var currentTime = new Date();
+            var timeArray = reminderTime.split(":");
+            var reminderDate = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), timeArray[0], timeArray[1]);
+
+            // If the reminder time is earlier than the current time, set it for the next day
+            if (reminderDate <= currentTime) {
+                reminderDate.setDate(reminderDate.getDate() + 1);
+            }
+
+            var timeRemaining = reminderDate - currentTime;
+
+            setTimeout(function() {
+                remindToDrinkWater();
+            }, timeRemaining);
+        }
+
+        function remindToDrinkWater() {
+            audio.play();
+            alert("It's time to drink water!");
+        }
+
+        function stopReminder() {
+            clearInterval(reminderIntervalID);
+            audio.pause();
+            alert("Reminder stopped.");
+        }
+
+        setInterval(currentTime, 10);
+    </script>
+</body>
+</html>
+<style>
+  body {
+    
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: white;
+    
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 50px;
+}
+
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+select {
+    font-family: Arial black, Comic ;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: Arial black, Comic ;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    
+    
+}
+
+button:hover {
+    font-family: Arial black, Comic ;
+    background-color: #0056b3;
+}
+
+button:disabled {
+    font-family: Arial black, Comic ;
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+span {
+    font-family: Arial black, Comic ;
+    font-weight: bold;
+}
+#currentTime{
+    font-family: Arial black, Comic ;
+}
+
+.currentTime {
+font-family: Arial black, Comic ;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+
+.container {
+    font-family: Arial black, Comic ;
+  position: relative;
+  padding-top: 10px;
+  width: 100%;
+  height: 15vh;
+}
+
+.reminder-image {
+    font-family: Arial black, Comic ;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+
+  .reminder-image{
+    padding: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Style the right-aligned links */
+  .topnav-right {
+    float: right;
+  }
+  
+  /* Style the links inside the right-aligned section */
+  .topnav-right a {
+    float: none;
+    display: inline;
+  }
+  
+  /* Add a color to the login and signup links */
+  .topnav-right a {
+    background-color: #ddd;
+    color: black;
+    border: none;
+  }
+</style>

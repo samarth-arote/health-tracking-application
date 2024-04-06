@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+<!--    
+    <header>
+        <div class='logo'></div>
+        <nav>
+            <ul>
+                <li><a href="/samarth/home.html">Go To Home</a></li>
+                <li><a href="login.html">Go To User Login</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form action="register.php" method="post">
+    <h2>User Registration Form:</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="p_no">Phone Number:</label>
+        <input type="text" id="p_no" name="p_no" required><br>
+
+        <label for="addr">Address:</label>
+        <textarea id="addr" name="addr" required></textarea><br>
+
+        <button type="submit">Register</button>
+    </form> -->
+    <div class="form-wrapper sign-up">
+        <form action="register.php" method="post">
+            <h2>Sign Up</h2>
+            <div class="input-group">
+                <input type="text" name="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="remember">
+                <label><input type="checkbox" name="terms"> I agree to the terms & conditions</label>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="signUp-link">
+                <p>Already have an account? <a href="form.html" class="signInBtn-link">Sign In</a></p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

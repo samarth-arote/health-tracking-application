@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Display Button</title>
+</head>
+<body>
+    <div style="padding-left:16px">
+        <h1>JUMPING JACKSS</h1>
+        <video width="250" height="240" controls>
+          
+          <source src="exeanimated1.mp4" type="video/mp4" >
+          not support
+        </video>
+        <p>Start with your feet together and your arms by your side, then jump up with your feet apart and your hands overhead.</p>
+    <button id="videoButton" onclick="toggleVideo()">Toggle Video</button>
+    <video id="myVideo" width="320" height="240" style="display: none;">
+        <source src="exe1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        
+    </video>
+
+    <script>
+        function toggleVideo() {
+            var video = document.getElementById("myVideo");
+            var button = document.getElementById("videoButton");
+
+            if (video.style.display === "none") {
+                video.style.display = "block";
+                button.textContent = "watch Video";
+                video.play(); // Start playing the video
+            } else {
+                video.style.display = "none";
+                button.textContent = "watch Video";
+                video.pause(); // Pause the video
+            }
+        }
+    </script>
+</body>
+</html>

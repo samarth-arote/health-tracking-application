@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<head>
+  <title>vid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body>
+
+    <div class="topnav">
+      <a class="active" href="f2.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      
+        
+      </div>
+    </div>
+    
+    <div style="padding-left:16px">
+    <h1>Tadasan</h1>
+    <video width="250" height="240" controls>
+      
+      <source src="yoga1.mp4" type="video/mp4" >
+      not support
+    </video>
+    <p>Start Your Activity</p>
+    <input type="time" id="alarmtime">
+    <button onclick="setAlarm();">Set Timer</button>
+    <button onclick="stopAlarm();">Stop Timer</button>
+
+    <script type="text/javascript">
+        var alarmTimeout; // Variable to store the alarm timeout
+
+        function currentTime() {
+            var date = new Date();
+            var now = date.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('currenttime').innerHTML = now;
+        }
+
+        setInterval(currentTime, 1000);
+
+        var alarmsound = new Audio("alarm.mp3");
+
+        function setAlarm() {
+            var alarmTime = document.getElementById('alarmtime').value;
+            var now = new Date();
+            var alarm = new Date(now.toDateString() + " " + alarmTime);
+            var timeRemaining = alarm - now;
+
+            // Set the alarm timeout
+            alarmTimeout = setTimeout(playAlarm, timeRemaining);
+
+            document.getElementById('alarmtime').disabled = true;
+        }
+
+        function playAlarm() {
+            alarmsound.play();
+            document.getElementById('alarmtime').disabled = false;
+        }
+
+        function stopAlarm() {
+            // Clear the alarm timeout
+            clearTimeout(alarmTimeout);
+            alarmsound.pause();
+            document.getElementById('alarmtime').disabled = false;
+        }
+    </script>
+
+
+
+
+
+
+
+    <h2>
+      ...
+    </h2>
+    <video width="250" height="240" controls>
+      <source src="yoga1.mp4" type="video/mp4">
+      not support
+    </video>
+    <p>Start Your Activity</p>
+    <input type="time" id="alarmtime">
+    <button onclick="setAlarm();">Set Timer</button>
+    <button onclick="stopAlarm();">Stop Timer</button>
+
+    <script type="text/javascript">
+        var alarmTimeout; // Variable to store the alarm timeout
+
+        function currentTime() {
+            var date = new Date();
+            var now = date.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('currenttime').innerHTML = now;
+        }
+
+        setInterval(currentTime, 1000);
+
+        var alarmsound = new Audio("alarm.mp3");
+
+        function setAlarm() {
+            var alarmTime = document.getElementById('alarmtime').value;
+            var now = new Date();
+            var alarm = new Date(now.toDateString() + " " + alarmTime);
+            var timeRemaining = alarm - now;
+
+            // Set the alarm timeout
+            alarmTimeout = setTimeout(playAlarm, timeRemaining);
+
+            document.getElementById('alarmtime').disabled = true;
+        }
+
+        function playAlarm() {
+            alarmsound.play();
+            document.getElementById('alarmtime').disabled = false;
+        }
+
+        function stopAlarm() {
+            // Clear the alarm timeout
+            clearTimeout(alarmTimeout);
+            alarmsound.pause();
+            document.getElementById('alarmtime').disabled = false;
+        }
+    </script>
+
+
+
+
+
+
+
+    <h3>..</h3>
+    <video width="250" height="240" controls>
+      <source src="yoga1.mp4" type="video/mp4">
+      not support
+    </video>
+    <p>Start Your Activity</p>
+    <input type="time" id="alarmtime">
+    <button onclick="setAlarm();">Set Timer</button>
+    <button onclick="stopAlarm();">Stop Timer</button>
+
+    <script type="text/javascript">
+        var alarmTimeout; // Variable to store the alarm timeout
+
+        function currentTime() {
+            var date = new Date();
+            var now = date.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('currenttime').innerHTML = now;
+        }
+
+        setInterval(currentTime, 1000);
+
+        var alarmsound = new Audio("alarm.mp3");
+
+        function setAlarm() {
+            var alarmTime = document.getElementById('alarmtime').value;
+            var now = new Date();
+            var alarm = new Date(now.toDateString() + " " + alarmTime);
+            var timeRemaining = alarm - now;
+
+            // Set the alarm timeout
+            alarmTimeout = setTimeout(playAlarm, timeRemaining);
+
+            document.getElementById('alarmtime').disabled = true;
+        }
+
+        function playAlarm() {
+            alarmsound.play();
+            document.getElementById('alarmtime').disabled = false;
+        }
+
+        function stopAlarm() {
+            // Clear the alarm timeout
+            clearTimeout(alarmTimeout);
+            alarmsound.pause();
+            document.getElementById('alarmtime').disabled = false;
+        }
+    </script>
+
+
+
+
+
+    
+    <h4>
+      ...
+    </h4>
+    <video width="250" height="240" controls>
+      <source src="yoga1.mp4" type="video/mp4">
+      not support
+    </video>
+    <p>Start Your Activity</p>
+    <input type="time" id="alarmtime">
+    <button onclick="setAlarm();">Set Timer</button>
+    <button onclick="stopAlarm();">Stop Timer</button>
+
+    <script type="text/javascript">
+        var alarmTimeout; // Variable to store the alarm timeout
+
+        function currentTime() {
+            var date = new Date();
+            var now = date.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('currenttime').innerHTML = now;
+        }
+
+        setInterval(currentTime, 1000);
+
+        var alarmsound = new Audio("alarm.mp3");
+
+        function setAlarm() {
+            var alarmTime = document.getElementById('alarmtime').value;
+            var now = new Date();
+            var alarm = new Date(now.toDateString() + " " + alarmTime);
+            var timeRemaining = alarm - now;
+
+            // Set the alarm timeout
+            alarmTimeout = setTimeout(playAlarm, timeRemaining);
+
+            document.getElementById('alarmtime').disabled = true;
+        }
+
+        function playAlarm() {
+            alarmsound.play();
+            document.getElementById('alarmtime').disabled = false;
+        }
+
+        function stopAlarm() {
+            // Clear the alarm timeout
+            clearTimeout(alarmTimeout);
+            alarmsound.pause();
+            document.getElementById('alarmtime').disabled = false;
+        }
+    </script>
+    <h5>....</h5>
+    <video width="250" height="240" controls>
+      <source src="yoga1.mp4" type="video/mp4">
+      not support
+    </video>
+   <p>Start Your Activity</p>
+    <input type="time" id="alarmtime">
+    <button onclick="setAlarm();">Set Timer</button>
+    <button onclick="stopAlarm();">Stop Timer</button>
+
+    <script type="text/javascript">
+        var alarmTimeout; // Variable to store the alarm timeout
+
+        function currentTime() {
+            var date = new Date();
+            var now = date.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('currenttime').innerHTML = now;
+        }
+
+        setInterval(currentTime, 1000);
+
+        var alarmsound = new Audio("alarm.mp3");
+
+        function setAlarm() {
+            var alarmTime = document.getElementById('alarmtime').value;
+            var now = new Date();
+            var alarm = new Date(now.toDateString() + " " + alarmTime);
+            var timeRemaining = alarm - now;
+
+            // Set the alarm timeout
+            alarmTimeout = setTimeout(playAlarm, timeRemaining);
+
+            document.getElementById('alarmtime').disabled = true;
+        }
+
+        function playAlarm() {
+            alarmsound.play();
+            document.getElementById('alarmtime').disabled = false;
+        }
+
+        function stopAlarm() {
+            // Clear the alarm timeout
+            clearTimeout(alarmTimeout);
+            alarmsound.pause();
+            document.getElementById('alarmtime').disabled = false;
+        }
+    </script>
+  </body>
+</head>
+<style>
+  /* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Style the right-aligned links */
+.topnav-right {
+  float: right;
+}
+
+/* Style the links inside the right-aligned section */
+.topnav-right a {
+  float: none;
+  display: inline;
+}
+
+/* Add a color to the login and signup links */
+.topnav-right a {
+  background-color: #ddd;
+  color: black;
+  border: none;
+}
+
+
+
+/* Style for the container */
+.container {
+  margin: 20px;
+}
+
+/* Style for the current time display */
+#currenttime {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style for the alarm time input */
+#alarmtime {
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* Style for the buttons */
+button {
+  padding: 10px 10px;
+  font-size: 16px;
+  background-color: #ff9502;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the alarm sound */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Additional style for the alarm sound when playing */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Style for the alarm sound */
+#alarmsound {
+  display: none;
+}
+
+</style>

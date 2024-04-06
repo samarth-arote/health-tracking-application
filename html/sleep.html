@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sleep Calculator</title>
+<style>
+  /* Add your CSS styles here */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  #calculator {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    height: 400px;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+
+  .reminder-image{
+    padding: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Style the right-aligned links */
+  .topnav-right {
+    float: right;
+  }
+  
+  /* Style the links inside the right-aligned section */
+  .topnav-right a {
+    float: none;
+    display: inline;
+  }
+  
+  /* Add a color to the login and signup links */
+  .topnav-right a {
+    background-color: #ddd;
+    color: black;
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+<div id="calculator">
+  <div class="topnav">
+    <a class="active" href="f2.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    
+      
+    </div>
+  <h2>Get your sleep Time</h2>
+
+  <label for="wakeUpTime">Wake Up Time:</label>
+  <input type="time" id="wakeUpTime" name="wakeUpTime">
+
+  <label for="sleepQuality">Sleep Quality:</label>
+  <select id="sleepQuality" name="sleepQuality">
+    <option value="excellent">Excellent</option>
+    <option value="good">Good</option>
+    <option value="fair">Fair</option>
+    <option value="poor">Poor</option>
+  </select>
+
+  <button onclick="calculateRecommendedSleep()">Calculate</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  function calculateRecommendedSleep() {
+    const wakeUpTime = document.getElementById('wakeUpTime').value;
+    const sleepQuality = document.getElementById('sleepQuality').value;
+
+    if (!wakeUpTime) {
+      alert('Please enter your wake-up time.');
+      return;
+    }
+
+    let recommendedSleepHours;
+
+    switch (sleepQuality) {
+      case 'excellent':
+        recommendedSleepHours = 7.5;
+        break;
+      case 'good':
+        recommendedSleepHours = 7;
+        break;
+      case 'fair':
+        recommendedSleepHours = 6.5;
+        break;
+      case 'poor':
+        recommendedSleepHours = 6;
+        break;
+      default:
+        recommendedSleepHours = 7;
+    }
+
+    const wakeUpHour = parseInt(wakeUpTime.split(':')[0]);
+    const wakeUpMinute = parseInt(wakeUpTime.split(':')[1]);
+
+    const bedtimeHour = wakeUpHour - recommendedSleepHours;
+    const bedtimeMinute = wakeUpMinute;
+
+    document.getElementById('result').innerHTML = `Recommended bedtime: ${formatTime(bedtimeHour, bedtimeMinute)}`;
+  }
+
+  function formatTime(hour, minute) {
+    const formattedHour = hour < 10 ? '0' + hour : hour;
+    const formattedMinute = minute < 10 ? '0' + minute : minute;
+    return `${formattedHour}:${formattedMinute}`;
+  }
+</script>
+
+</body>
+</html>
